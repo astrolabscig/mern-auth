@@ -52,8 +52,8 @@ app.use(cors({origin: allowedOrigins, credentials: true}));
 //app.use(cors({origin: true, credentials: true})); // Good for now, ensures your client can connect
 
 // API Endpoints
-app.use('api/auth', authRouter);
-app.use('api/user', userRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/user', userRouter);
 
 // ADDED: A basic health check or root response for Vercel
 app.get('/', (req, res) => {
