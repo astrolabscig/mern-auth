@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 import { useRef } from 'react';
 import { useContext } from 'react';
-import { AppContext } from '../context/AppContext';
+import { AuthContext } from '../context/AuthContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
 const ResetPassword = () => {
   
-  const { backendUrl } = useContext(AppContext);
+  const { backendUrl } = useContext(AuthContext);
   //axios.defaults.withCredentials = true;
 
   const navigate = useNavigate();
