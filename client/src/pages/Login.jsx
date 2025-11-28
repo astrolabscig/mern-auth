@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react'
 import { assets } from '../assets/assets';
 import { useNavigate } from 'react-router-dom';
-import { AppContext } from '../context/AppContext';
+import { AuthContext } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const Login = () => {
     const navigate = useNavigate();
 
-    const { backendUrl, setIsLoggedIn,  getUserData } = useContext(AppContext);
+    const { backendUrl, setIsLoggedIn,  getUserData } = useContext(AuthContext);
 
     const [state, setState] = useState('Login');
     const [name, setName] = useState('');
