@@ -82,7 +82,7 @@
 import React, { useContext, useState } from 'react';
 import { assets } from '../assets/assets';
 import { useNavigate } from 'react-router-dom';
-import { AppContext } from '../context/AuthContext';
+import { AuthContext } from '../context/AuthContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { FaLock } from 'react-icons/fa';
@@ -97,7 +97,7 @@ const axiosInstance = axios.create({
 const Navbar = () => {
     const navigate = useNavigate();
     // Destructure required data and functions
-    const { userData, backendUrl, setUserData, setIsLoggedIn } = useContext(AppContext);
+    const { userData, backendUrl, setUserData, setIsLoggedIn } = useContext(AuthContext);
 
     const [ isOpen, setIsOpen ] = useState(false);
     
