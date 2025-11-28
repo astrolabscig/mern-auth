@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 import { assets } from '../assets/assets'
-import { AppContext } from '../context/AppContext'
+import { AuthContext } from '../context/AuthContext'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Header = () => {
-  const { userData } = useContext(AppContext);
+  const { userData } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const { isLoggedIn } = useContext(AppContext);
+  const { isLoggedIn } = useContext(AuthContext);
   
 
   const login = () => {
