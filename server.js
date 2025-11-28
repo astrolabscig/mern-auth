@@ -42,13 +42,14 @@ const app = express();
 
 connectDB(); // Ensure this handles connection caching for serverless environments
 
-// const allowedOrigins = ['http://localhost:5173'];
-
+//const allowedOrigins = ['https://mern-auth-tau-sandy.vercel.app/'];
+const VERCEL_URL = process.env.VERCEL_URL;
+const allowedOrigins = VERCEL_URL ? `https://${VERCEL_URL}` : 'http://localhost:5173';
 app.use(express.json());
 app.use(cookieParser());
 // Your CORS setting is good for local/testing. Keep it restricted for final production.
-// app.use(cors({origin: allowedOrigins, credentials: true}));
-app.use(cors({origin: true, credentials: true})); // Good for now, ensures your client can connect
+app.use(cors({origin: allowedOrigins, credentials: true}));
+//app.use(cors({origin: true, credentials: true})); // Good for now, ensures your client can connect
 
 // API Endpoints
 app.use('/api/auth', authRouter);
