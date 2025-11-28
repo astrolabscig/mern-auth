@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useRef } from 'react'
 import { assets } from '../assets/assets'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { AppContext } from '../context/AppContext';
+import { AuthContext } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 
 
 const EmailVerify = () => {
-  const { backendUrl, isLoggedIn, userData, getUserData } = useContext(AppContext);
+  const { backendUrl, isLoggedIn, userData, getUserData } = useContext(AuthContext);
   
   const inputRefs = useRef([]);
   const navigate = useNavigate();
@@ -100,7 +100,7 @@ export default EmailVerify
 // import { assets } from '../assets/assets';
 // import { useNavigate } from 'react-router-dom';
 // import axios from 'axios';
-// import { AppContext } from '../context/AppContext';
+// import { AuthContext } from '../context/AuthContext';
 // import { toast } from 'react-toastify';
 
 // // 💡 Best Practice: axios.defaults.withCredentials should be set once in the application's entry file (e.g., main.jsx). 
@@ -111,7 +111,7 @@ export default EmailVerify
 
 // const EmailVerify = () => {
 //     // Destructure userId from userData for direct use and clarity
-//     const { backendUrl, isLoggedIn, userData, getUserData } = useContext(AppContext);
+//     const { backendUrl, isLoggedIn, userData, getUserData } = useContext(AuthContext);
     
 //     // 1. Destructure userId from userData for use in onSubmitHandler
 //     const userId = userData?.id; 
