@@ -1,14 +1,15 @@
 {
-  "name": "server",
+  "name": "mern-auth",
   "version": "1.0.0",
-  "description": "",
+  "description": "MERN auth with email verification and password reset, deployed on Vercel",
   "license": "ISC",
-  "author": "",
+  "author": "Joseph Afful <astrolabscig@gmail.com>",
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "startServer": "nodemon server.js"
+    "start": "node localServer.js",
+    "dev": "nodemon localServer.js",
+    "build": "npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
@@ -21,6 +22,6 @@
     "nodemailer": "^7.0.10"
   },
   "devDependencies": {
-  "nodemon": "^3.1.11"
+    "nodemon": "^3.1.11"
   }
 }
